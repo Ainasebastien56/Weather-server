@@ -17,7 +17,7 @@ app.get('/news', async(req,res)=>{
                 apikey : newsAPIKey
             }
         });
-        res,json(response.data);
+        res.json(response.data);
     }catch(error){
         res.status(500).json({message:'Erreur lors des récuperation des données News!'});
     }
