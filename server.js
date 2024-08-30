@@ -3,7 +3,7 @@ const cors = require("cors");
 const axios = require("axios")
 
 const app = express();
-const port = process.nextTick.PORT || 3000;
+const port = process.env.PORT || 3000;
 const newsAPIKey = process.env.NEWS_API_KEY;
 
 app.use(cors());
