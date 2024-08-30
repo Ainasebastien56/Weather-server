@@ -18,10 +18,11 @@ app.get('/news', async(req,res)=>{
             }
         });
         res.json(response.data);
-    }catch(error){
-        res.status(500).json({message:'Erreur lors des récuperation des données News!'});
+    }catch (error) {
+        console.error("Erreur lors de l'appel à l'API News:", error.response ? error.response.data : error.message);
+        res.status(500).json({message:'Erreur lors des récupération des données News!'});
     }
-});
+    });
 
 app.listen(port, ()=>{
     console.log(`Serveur proxy en cours d'execution sur le port ${port}`);
