@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios")
+require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -23,7 +24,8 @@ app.get('/news', async(req,res)=>{
         res.status(500).json({message:'Erreur lors des récupération des données News!'});
     }
     });
-
+console.log(newsAPIKey)
 app.listen(port, ()=>{
+    console.log(newsAPIKey)
     console.log(`Serveur proxy en cours d'execution sur le port ${port}`);
 })
